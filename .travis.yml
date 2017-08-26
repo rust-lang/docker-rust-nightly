@@ -6,10 +6,10 @@ env:
   matrix:
     secure: eWb8RcvEjqfUBIyIIR4FO5xhO4zLPZxztoQA6hSxNC26DBKJqWloixkEercDKbDDgRg2a0lxe0wxpNKRnu9eHMDsYuXhfFAEiA9YSSSoE+lZM+ZpXRwD6P8R3GIpWBTYsWlLYAbCNPAW4E5AZfwH5LjC10spdUTJrWzdA6ILMiJP4NNP8fTuhC1K4PnsLgrkVZ/KooNdnRqbr0HKxn/+TRcrCTY4MR06/9uwG9+exlRY8CGpHmTfG2HPE1pe5TctZzd7D3Ka0NhcATHNYvKj0P6F1R5LKk5+ghIiA4WAsFHjxMWfUMkqQBJo5je+Z7Py64I4gAF1rNRp2ZN0hOm7n6DCuHGmiX8sFgO5l8O4oCebBk/7RofsWceOhLE9GWZVuyqFE5V5CgNMEer/J+bZXthT4t55HxSCwl26x2MNzioY00YCFuFXkzRxT4cJ5pRuGqtxADsDDcc2yJ6sAxxw7CqHZNIE3L47Tpf/xqfKpZcuBESJAr1Ep9qUhfjfYkLD67eJKJb1ASRoH+ZXEvJM3F964dzzf7Kq0fVv0X+cQ8box0cjZ+/gcf7g0x6TlyK1Srx4nlxKTAAcyfbbZggCbSkVMvgfK4iD2woRta/FHI8iIpmp605xVzXLkrXI7CdIhVI2zD12D4rHSugNc1LSV6Do5d/+6XXngNhwrAjUljs=
 
-
 script: docker build .
 
 after_success: |
   if [ "$TRAVIS_BRANCH" = "master" -a "$TRAVIS_PULL_REQUEST" = "false" ]; then
-    curl -H "Content-Type: application/json" --data '{"build": true}' -X POST https://registry.hub.docker.com/u/rustlang/rust/trigger/${TRIGGER_TOKEN}/
+    curl -H "Content-Type: application/json" --data '{"build": true}' -X POST \
+      https://registry.hub.docker.com/u/rustlang/rust/trigger/${TRIGGER_TOKEN}/
   fi
