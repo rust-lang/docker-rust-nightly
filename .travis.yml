@@ -1,0 +1,10 @@
+sudo: required
+services:
+- docker
+
+script: docker build .
+
+after_success: |
+  if [ "$TRAVIS_BRANCH" = "master" -a "$TRAVIS_PULL_REQUEST" = "false" ]; then
+    curl -H "Content-Type: application/json" --data '{"build": true}' -X POST https://registry.hub.docker.com/u/rustlang/rust/trigger/${TRIGGER_TOKEN}/
+  fi
