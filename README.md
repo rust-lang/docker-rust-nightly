@@ -1,3 +1,5 @@
+Find it on the [hub](https://hub.docker.com/r/rustlang/rust/).
+
 For typical use cases, see the [official image](https://hub.docker.com/_/rust/).
 
 This image has a single tag, `nightly`, which is updated every day to match the
