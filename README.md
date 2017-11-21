@@ -1,4 +1,4 @@
-Find it on the [hub](https://hub.docker.com/r/rustlang/rust/).
+Find it on the [Docker Hub](https://hub.docker.com/r/rustlang/rust/).
 
 For typical use cases, see the [official image](https://hub.docker.com/_/rust/).
 
