@@ -6,7 +6,9 @@ env:
   matrix:
     secure: XbLPvMst3FUIteb5YxAgUURPHlTeIsjIG61UHnL9l4R1g18SWIBZqqf03NaYltpFKTUObhNgtkiY2XHZYNODt/svUbMaAqmLB8lwwnICLnc3pS5fHe9lTMQ3GZhf+lByM5M19+3slm8gDIagbOcVFALpBpOr57t7RGjBii0OQlooWrJKUMcZkcPMDoIcczSYqfFDpo3x0pjlg0j6ooFG3FB12nHyZfJgALM4hVQFOGemLEIFD9BUAejxYrJegK8Xzd0b4M+MxmvF5X3StDb6dwA3S9IGOYE99s5dTceYIRK3K5lz6YODAjU8+l1UrRWk68rKar7tMsRKfFU8o4S1JEzSIGldQBPp2x0y183t5dIwAGad8IoHbcGGvGddOE58/GFLukcq0iHyVafkUDPNc7g7exERbhRKwYPgM0BIVm6ZabjgHw3OeRhrWlazZ9AWdRAeznNLEFvLGaMlNnqC/bHvMC1EGiX44yB7F26sn6o626ml6TENLRYCeGX/Bz7ZMELwmDQR6OIa2P8CSzBYnAKv8O/vUuO+5wjPpDgLhPdZauCOO0xWGaO44SfKgO/Zt7geVFlSOBnu5AFjQhf9ZZQD6ZCXHz1/SwHyfb9S3hlU96mek8lg71GLNjYzmkf53nen43bqrBwLQfwkmdSOjtiSh8SqbRpNHk50uAcFf8E=
 
-script: docker build .
+script:
+- docker build nightly
+- docker build nightly-slim
 
 after_success: |
   if [ "$TRAVIS_BRANCH" = "master" -a "$TRAVIS_PULL_REQUEST" = "false" ]; then
