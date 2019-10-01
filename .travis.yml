@@ -11,6 +11,7 @@ script:
 - docker build stretch/slim
 - docker build buster
 - docker build buster/slim
+- docker build alpine3.10
 
 after_success: |
   if [ "$TRAVIS_BRANCH" = "master" -a "$TRAVIS_PULL_REQUEST" = "false" ]; then
