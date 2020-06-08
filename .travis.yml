@@ -9,7 +9,7 @@ script:
 - docker build stretch/slim
 - docker build buster
 - docker build buster/slim
-- docker build alpine3.10
+- docker build alpine3.12
 after_success: |
   if [ "$TRAVIS_BRANCH" = "master" -a "$TRAVIS_PULL_REQUEST" = "false" ]; then
     curl -sS -H "Content-Type: application/json" --data '{"build": true}' -X POST \
