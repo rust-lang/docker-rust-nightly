@@ -1,4 +1,4 @@
-FROM debian:stretch-slim
+FROM debian:bullseye-slim
 
 ENV RUSTUP_HOME=/usr/local/rustup \
     CARGO_HOME=/usr/local/cargo \

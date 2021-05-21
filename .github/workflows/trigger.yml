@@ -12,10 +12,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - run: docker build stretch
-      - run: docker build stretch/slim
       - run: docker build buster
       - run: docker build buster/slim
+      - run: docker build bullseye
+      - run: docker build bullseye/slim
       - run: docker build alpine3.12
       - run: |
           curl -sS -H "Content-Type: application/json" --data '{"build": true}' -X POST \
