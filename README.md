@@ -1,4 +1,5 @@
-Find it on the [Docker Hub](https://hub.docker.com/r/rustlang/rust/).
+Find it on the [Docker Hub](https://hub.docker.com/r/rustlang/rust/) and the
+[GitHub Container Registry](https://github.com/rust-lang/docker-rust-nightly/pkgs/container/rust).
 
 For typical use cases, see the [official image](https://hub.docker.com/_/rust/).
 
