@@ -1,0 +1,49 @@
+name: Build
+
+on:
+  push:
+    branches:
+      - master
+  schedule:
+    - cron: '0 0 * * *'
+
+jobs:
+  trigger:
+    strategy:
+      matrix:
+        include:
+          - context: alpine3.12
+            tags: |
+              nightly-alpine3.12
+              nightly-alpine
+          - context: bullseye
+            tags: |
+              nightly-bullseye
+          - context: bullseye/slim
+            tags: |
+              nightly-bullseye-slim
+          - context: buster
+            tags: |
+              value=nightly
+              value=nightly-buster
+          - context: buster/slim
+            tags: |
+              nightly-slim
+              nightly-buster-slim
+
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - id: meta
+        uses: docker/metadata-action@v3
+        with:
+          images: rustlang/rust
+          tags: ${{ matrix.tags }}
+
+      - uses: docker/build-push-action@v2
+        with:
+          context: ${{ matrix.context }}
+          push: false
+          tags: ${{ steps.meta.outputs.tags }}
+          labels: ${{ steps.meta.outputs.labels }}
