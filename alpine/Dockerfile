@@ -1,4 +1,7 @@
-FROM alpine:3.12
+# to specify a different alpine version, use --build-arg ALPINE_VERSION=3.12
+# when building the image
+ARG ALPINE_VERSION=3.14
+FROM alpine:${ALPINE_VERSION}
 
 RUN apk add --no-cache \
         ca-certificates \
