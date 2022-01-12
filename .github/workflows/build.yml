@@ -17,15 +17,20 @@ jobs:
         include:
           - context: alpine
             args: |
-              ALPINE_VERSION=3.14
+              ALPINE_VERSION=3.15
             tags: |
-              nightly-alpine3.14
+              nightly-alpine3.15
               nightly-alpine
           - context: alpine
             args: |
-              ALPINE_VERSION=3.12
+              ALPINE_VERSION=3.14
             tags: |
-              nightly-alpine3.12
+              nightly-alpine3.14
+          - context: alpine
+            args: |
+              ALPINE_VERSION=3.13
+            tags: |
+              nightly-alpine3.13
           - context: bullseye
             tags: |
               nightly-bullseye
