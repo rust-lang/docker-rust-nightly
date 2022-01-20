@@ -26,11 +26,6 @@ jobs:
               ALPINE_VERSION=3.14
             tags: |
               nightly-alpine3.14
-          - context: alpine
-            args: |
-              ALPINE_VERSION=3.13
-            tags: |
-              nightly-alpine3.13
           - context: bullseye
             tags: |
               nightly-bullseye
