@@ -1,4 +1,5 @@
-FROM buildpack-deps:bullseye
+ARG DEBIAN_VERSION
+FROM buildpack-deps:${DEBIAN_VERSION}
 
 ENV RUSTUP_HOME=/usr/local/rustup \
     CARGO_HOME=/usr/local/cargo \

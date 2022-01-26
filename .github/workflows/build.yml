@@ -26,17 +26,25 @@ jobs:
               ALPINE_VERSION=3.14
             tags: |
               nightly-alpine3.14
-          - context: bullseye
+          - context: debian
+            args: |
+              DEBIAN_VERSION=bullseye
             tags: |
               nightly-bullseye
-          - context: bullseye/slim
+          - context: debian
+            args: |
+              DEBIAN_VERSION=buster
+            tags: |
+              nightly
+              nightly-buster
+          - context: debian-slim
+            args: |
+              DEBIAN_VERSION=bullseye
             tags: |
               nightly-bullseye-slim
-          - context: buster
-            tags: |
-              value=nightly
-              value=nightly-buster
-          - context: buster/slim
+          - context: debian-slim
+            args: |
+              DEBIAN_VERSION=buster
             tags: |
               nightly-slim
               nightly-buster-slim

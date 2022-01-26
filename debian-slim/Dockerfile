@@ -1,4 +1,5 @@
-FROM debian:buster-slim
+ARG DEBIAN_VERSION
+FROM debian:${DEBIAN_VERSION}-slim
 
 ENV RUSTUP_HOME=/usr/local/rustup \
     CARGO_HOME=/usr/local/cargo \
