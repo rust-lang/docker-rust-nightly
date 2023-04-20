@@ -17,36 +17,46 @@ jobs:
         include:
           - context: alpine
             args: |
-              ALPINE_VERSION=3.15
+              ALPINE_VERSION=3.17
             tags: |
-              nightly-alpine3.15
+              nightly-alpine3.17
               nightly-alpine
           - context: alpine
             args: |
-              ALPINE_VERSION=3.14
+              ALPINE_VERSION=3.16
             tags: |
-              nightly-alpine3.14
+              nightly-alpine3.16
+          - context: debian
+            args: |
+              DEBIAN_VERSION=bookworm
+            tags: |
+              nightly-bookworm
           - context: debian
             args: |
               DEBIAN_VERSION=bullseye
             tags: |
+              nightly
               nightly-bullseye
           - context: debian
             args: |
               DEBIAN_VERSION=buster
             tags: |
-              nightly
               nightly-buster
+          - context: debian-slim
+            args: |
+              DEBIAN_VERSION=bookworm
+            tags: |
+              nightly-bookworm-slim
           - context: debian-slim
             args: |
               DEBIAN_VERSION=bullseye
             tags: |
+              nightly-slim
               nightly-bullseye-slim
           - context: debian-slim
             args: |
               DEBIAN_VERSION=buster
             tags: |
-              nightly-slim
               nightly-buster-slim
 
     runs-on: ubuntu-latest
